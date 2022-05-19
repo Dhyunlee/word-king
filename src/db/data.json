@@ -1,0 +1,88 @@
+{
+  "vocas": [
+    {
+      "voca": "수능 기출 단어",
+      "id": 1
+    },
+    {
+      "voca": "필수 영단어",
+      "id": 2
+    },
+    {
+      "voca": "공무원 연단어 모음",
+      "id": 3
+    }
+  ],
+  "words": [
+    {
+      "id": 1,
+      "voca": "필수 영단어",
+      "word": "gift",
+      "meaning": "선물",
+      "isDone": false
+    },
+    {
+      "id": 2,
+      "voca": "필수 영단어",
+      "word": "corn",
+      "meaning": "곡물의, 낟알의, 옥수수",
+      "isDone": false
+    },
+    {
+      "id": 5,
+      "voca": "수능 기출 단어",
+      "word": "application",
+      "meaning": "어플",
+      "isDone": false
+    },
+    {
+      "id": 6,
+      "voca": "수능 기출 단어",
+      "word": "apply",
+      "meaning": "적용하다",
+      "isDone": false
+    },
+    {
+      "voca": "필수 영단어",
+      "word": "data",
+      "meaning": "자료",
+      "isDone": false,
+      "id": 7
+    },
+    {
+      "voca": "필수 영단어",
+      "word": "word",
+      "meaning": "어휘",
+      "isDone": false,
+      "id": 8
+    },
+    {
+      "voca": "공무원 연단어 모음",
+      "word": "apple",
+      "meaning": "사과",
+      "isDone": false,
+      "id": 9
+    },
+    {
+      "voca": "공무원 연단어 모음",
+      "word": "according to",
+      "meaning": "따르면, ...고 하다, 의하면",
+      "isDone": false,
+      "id": 10
+    },
+    {
+      "voca": "공무원 연단어 모음",
+      "word": "belongings",
+      "meaning": "명사. 소지품",
+      "isDone": false,
+      "id": 11
+    },
+    {
+      "voca": "공무원 연단어 모음",
+      "word": "engage in",
+      "meaning": "종사하다; …에 착수하다, 시작하다; 참가하다",
+      "isDone": false,
+      "id": 12
+    }
+  ]
+}

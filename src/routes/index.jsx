@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import VocaList from '../pages/VocaList';
+import VocaPage from '../pages/VocaPage';
 
 function RouterContainer() {
   return (
     <Routes>
-      <Route path="/" element={<VocaList />} />
+      <Route path="/" element={<VocaPage />} />
     </Routes>
   );
 }
