@@ -2,15 +2,17 @@ import React, { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import VocaList from '../../components/ViewVocaList';
 import { VocaListContainer } from './style.jsx';
+import { DEV_KEY } from './../../constants/dev-key';
+
+const { default_api_url } = DEV_KEY;
 
 const VocaPage = () => {
   const [vocas, setVocas] = useState([]);
   const [loading, setLoading] = useState(false);
-
   const fetchVocaList = useCallback(async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get('http://localhost:5000/vocas');
+      const { data } = await axios.get(`${default_api_url}/vocas`);
       setVocas(data);
       setLoading(false);
     } catch (err) {
@@ -31,7 +33,7 @@ const VocaPage = () => {
         `http://localhost:5000/vocas?voca={name}`
         형태로 가져올 수 있음 
       */
-      await axios.delete(`http://localhost:5000/vocas/${id}`);
+      await axios.delete(`${default_api_url}/vocas/${id}`);
       window.location.reload();
     }
   }, []);

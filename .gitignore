@@ -1,7 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# directory
+# directorys & files
 /db
+.env
 
 # dependencies
 /node_modules
