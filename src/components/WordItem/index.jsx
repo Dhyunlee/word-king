@@ -1,23 +1,24 @@
 import React from 'react';
+import { WordItemStyle, HeadText, ContextText, DelBtn } from './style.jsx';
 
 const WordItem = ({ wordItem, isViewMeaning, onDelWord }) => {
   const { word, meaning } = wordItem;
 
   return (
-    <div>
+    <WordItemStyle>
       <dl>
-        <dt>{word}</dt>
-        {isViewMeaning && <dd>{meaning}</dd>}
+        <HeadText>{word}</HeadText>
+        {isViewMeaning && <ContextText>{meaning}</ContextText>}
       </dl>
-      <button
+      <DelBtn
         onClick={e => {
           onDelWord(wordItem);
         }}
       >
         {/* 삭제 */}
         <i className="fa-solid fa-trash-can"></i>
-      </button>
-    </div>
+      </DelBtn>
+    </WordItemStyle>
   );
 };
 export default WordItem;
