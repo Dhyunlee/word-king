@@ -29,6 +29,7 @@ export const HeadText = styled.dt`
 export const ContextText = styled.dd`
   height: 27px;
   margin-left: 20px;
+  line-height: 29px;
 `;
 export const DelBtn = styled.button`
   position: relative;
