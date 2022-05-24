@@ -4,7 +4,16 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import WordItem from '../../components/WordItem';
 import { DEV_KEY } from './../../constants/dev-key';
-
+import {
+  WordItemContainer,
+  HeaderTitle,
+  WordSort,
+  WordSortMenu,
+  ViewWord,
+  WordList,
+  WordAert,
+  ToggleBtnContainer,
+} from './style';
 const { default_api_url } = DEV_KEY;
 
 const WordPage = () => {
@@ -55,12 +64,12 @@ const WordPage = () => {
 
   const renderWordItem = isFatching => {
     return word.length === 0 ? (
-      <div className="wordAlert">
+      <WordAert>
         <p>
           아직 추가한 단어가 없어요! 😅 <br />
           단어를 추가해주세요
         </p>
-      </div>
+      </WordAert>
     ) : (
       word.map(item => (
         <WordItem
@@ -74,33 +83,33 @@ const WordPage = () => {
   };
 
   return (
-    <section className="wordItemContainer">
-      <header className="headerTitle">
+    <WordItemContainer>
+      <HeaderTitle>
         <h2>{name}</h2>
-      </header>
+      </HeaderTitle>
       {word.length !== 0 && (
         <nav>
-          <ul className={'wordSortMenu'}>
+          <WordSortMenu>
             <li>
               <label htmlFor="sort">정렬</label>
-              <select className={'wordSort'} id="sort">
+              <WordSort>
                 <option>선택</option>
                 <option>최신순</option>
                 <option>사전순</option>
-              </select>
+              </WordSort>
             </li>
             <li>
-              <button onClick={handleViewMeaning} className="viewWord">
+              <ViewWord onClick={handleViewMeaning}>
                 {isViewMeaning ? '단어뜻 숨기기' : '단어뜻 보기'}
-              </button>
+              </ViewWord>
             </li>
-          </ul>
+          </WordSortMenu>
         </nav>
       )}
       {/* wordItem */}
-      <div className="wordList">{renderWordItem(isFetch)}</div>
+      <WordList>{renderWordItem(isFetch)}</WordList>
 
-      <div className="styled.toggleBtn">
+      <ToggleBtnContainer>
         <button
           type="button"
           onClick={e => {
@@ -109,8 +118,8 @@ const WordPage = () => {
         >
           단어 추가
         </button>
-      </div>
-    </section>
+      </ToggleBtnContainer>
+    </WordItemContainer>
   );
 };
 export default WordPage;
