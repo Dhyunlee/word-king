@@ -3,12 +3,19 @@ import axios from 'axios';
 import VocaList from '../../components/ViewVocaList';
 import { VocaListContainer } from './style.jsx';
 import { DEV_KEY } from './../../constants/dev-key';
+import SideMenu from './../../components/SideMenu/index';
 
 const { default_api_url } = DEV_KEY;
 
 const VocaPage = () => {
   const [vocas, setVocas] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [isView, setIsView] = useState(false);
+
+  const toggleBtn = useCallback(e => {
+    setIsView(preState => !preState);
+  }, []);
+
   const fetchVocaList = useCallback(async () => {
     setLoading(true);
     try {
@@ -41,6 +48,7 @@ const VocaPage = () => {
   return (
     <VocaListContainer>
       <VocaList loading={loading} vocas={vocas} delBtn={delBtn} />
+      <SideMenu isView={isView} toggleBtn={toggleBtn} />
     </VocaListContainer>
   );
 };
