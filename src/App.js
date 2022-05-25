@@ -2,7 +2,7 @@ import { Global } from '@emotion/react';
 
 import Router from './routes';
 import { reset } from './styles/reset';
-import DefaultLayout from './Template/defaultLayout';
+import DefaultLayout from './template/defaultLayout';
 
 function App() {
   return (
