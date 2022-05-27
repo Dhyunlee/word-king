@@ -17,6 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "backend": "json-server --watch ./src/db/data.json --port 5000",
+    "dev": "concurrently \"npm run backend\" \"npm run start\"",
     "build": "react-scripts build"
   },
   "eslintConfig": {
@@ -36,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1"
   }
 }
