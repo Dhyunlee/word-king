@@ -19,13 +19,8 @@ const { default_api_url } = DEV_KEY;
 const WordPage = () => {
   const [word, setWord] = useState([]);
   const [isFetch, setIsFetch] = useState(false);
-  const [isViewMeaning, setIsViewMeaning] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
-
-  const handleViewMeaning = e => {
-    setIsViewMeaning(preState => !preState);
-  };
 
   const onDelWord = useCallback(
     async ({ id: wordId }) => {
@@ -33,6 +28,7 @@ const WordPage = () => {
         console.log('삭제합니다.');
 
         await axios.delete(`${default_api_url}/words/${wordId}`);
+        setWord({ id: 0 });
         navigate('/', { replace: true });
       }
     },
@@ -72,12 +68,7 @@ const WordPage = () => {
       </WordAert>
     ) : (
       word.map(item => (
-        <WordItem
-          key={item.id}
-          wordItem={item}
-          isViewMeaning={isViewMeaning}
-          onDelWord={onDelWord}
-        />
+        <WordItem key={item.id} wordItem={item} onDelWord={onDelWord} />
       ))
     );
   };
@@ -97,11 +88,6 @@ const WordPage = () => {
                 <option>최신순</option>
                 <option>사전순</option>
               </WordSort>
-            </li>
-            <li>
-              <ViewWord onClick={handleViewMeaning}>
-                {isViewMeaning ? '단어뜻 숨기기' : '단어뜻 보기'}
-              </ViewWord>
             </li>
           </WordSortMenu>
         </nav>

@@ -31,6 +31,16 @@ export const ContextText = styled.dd`
   margin-left: 20px;
   line-height: 29px;
 `;
+
+export const ViewMening = styled.button`
+  width: 160px;
+  background: #dad8d8;
+  box-shadow: 0px 1px 4px rgb(0 0 0 / 15%);
+  color: #636363;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 3px;
+`;
 export const DelBtn = styled.button`
   position: relative;
   left: 3px;
