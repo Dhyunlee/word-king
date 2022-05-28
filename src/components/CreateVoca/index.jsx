@@ -58,7 +58,7 @@ const CreateVoca = () => {
             <InputGroup>
               <Label>단어장</Label>
               <InputWrap>
-                <Input type="text" ref={inputRef} />
+                <Input type="text" autoComplete="off" ref={inputRef} />
               </InputWrap>
             </InputGroup>
             <BtnGroup>

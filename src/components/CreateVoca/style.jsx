@@ -29,11 +29,7 @@ export const Label = styled.label`
   text-align: center;
   font-size: 18px;
   font-weight: 600;
-  flex: 18px;
-`;
-
-export const SelectLabel = styled.label`
-  flex: 18px;
+  flex: ${props => props.flexSize || '1 auto'};
 `;
 
 export const InputWrap = styled.div`
