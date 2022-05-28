@@ -21,7 +21,7 @@ const WordItem = ({ wordItem, onDelWord }) => {
         {isShowMeaning && <ContextText>{meaning}</ContextText>}
       </dl>
       <ViewMening onClick={handleShow}>
-        {isShowMeaning ? '단어뜻 숨기기' : '단어뜻 보기'}
+        {isShowMeaning ? '뜻 숨기기' : '뜻 보기'}
       </ViewMening>
       <DelBtn
         onClick={e => {
