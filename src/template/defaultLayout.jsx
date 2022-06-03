@@ -11,7 +11,7 @@ const DefaultLayout = ({ children }) => {
   );
 };
 
-DefaultLayout.prototype = {
+DefaultLayout.propTypes = {
   children: prototypes.node.isRequired,
 };
 
