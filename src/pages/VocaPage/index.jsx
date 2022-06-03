@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
-import VocaList from '../../components/ViewVocaList';
 import { VocaListContainer } from './style.jsx';
 import { DEV_KEY } from './../../constants/dev-key';
-import SideMenu from './../../components/SideMenu/index';
+import SideMenu from './../../components/SideMenu';
+import VocaList from './../../components/Vocas';
 
 const { default_api_url } = DEV_KEY;
 
