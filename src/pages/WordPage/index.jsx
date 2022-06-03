@@ -14,11 +14,12 @@ import {
   WordAert,
   ToggleBtnContainer,
 } from './style';
+import Spinner from '../../components/Spinner';
 const { default_api_url } = DEV_KEY;
 
 const WordPage = () => {
   const [word, setWord] = useState([]);
-  const [isFetch, setIsFetch] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -43,11 +44,11 @@ const WordPage = () => {
     ignoreQueryPrefix: true,
   });
   const asyncFetch = useCallback(async () => {
-    setIsFetch(true);
+    setLoading(true);
     try {
       const { data } = await axios.get(`${default_api_url}/words?voca=${name}`);
       setWord(data);
-      setIsFetch(false);
+      setLoading(false);
     } catch (err) {
       alert('서버에 에러가 발생했습니다.', err.message);
       console.error(err.message);
@@ -59,18 +60,22 @@ const WordPage = () => {
   }, [asyncFetch]);
 
   const renderWordItem = isFatching => {
-    return word.length === 0 ? (
-      <WordAert>
-        <p>
-          아직 추가한 단어가 없어요! 😅 <br />
-          단어를 추가해주세요
-        </p>
-      </WordAert>
-    ) : (
-      word.map(item => (
-        <WordItem key={item.id} wordItem={item} onDelWord={onDelWord} />
-      ))
-    );
+    if (isFatching) {
+      return <Spinner />;
+    } else {
+      return word.length === 0 ? (
+        <WordAert>
+          <p>
+            아직 추가한 단어가 없어요! 😅 <br />
+            단어를 추가해주세요
+          </p>
+        </WordAert>
+      ) : (
+        word.map(item => (
+          <WordItem key={item.id} wordItem={item} onDelWord={onDelWord} />
+        ))
+      );
+    }
   };
 
   return (
@@ -93,7 +98,7 @@ const WordPage = () => {
         </nav>
       )}
       {/* wordItem */}
-      <WordList>{renderWordItem(isFetch)}</WordList>
+      <WordList>{renderWordItem(loading)}</WordList>
 
       <ToggleBtnContainer>
         <button

@@ -32,6 +32,16 @@ export const ContextText = styled.dd`
   line-height: 29px;
 `;
 
+export const VocalContainer = styled.span`
+  position: relative;
+  top: 3px;
+  left: 8px;
+  line-height: 29px;
+  display: inline;
+  font-size: 18px;
+  color: #9b938a;
+  cursor: pointer;
+`;
 export const ViewMening = styled.button`
   width: 160px;
   background: #dad8d8;
